@@ -1,3 +1,7 @@
+output "digital_twins_endpoint_eventhubs_id" {
+  description = "Map of id values across all digital_twins_endpoint_eventhubs, keyed the same as var.digital_twins_endpoint_eventhubs"
+  value       = { for k, v in azurerm_digital_twins_endpoint_eventhub.digital_twins_endpoint_eventhubs : k => v.id }
+}
 output "digital_twins_endpoint_eventhubs_dead_letter_storage_secret" {
   description = "Map of dead_letter_storage_secret values across all digital_twins_endpoint_eventhubs, keyed the same as var.digital_twins_endpoint_eventhubs"
   value       = { for k, v in azurerm_digital_twins_endpoint_eventhub.digital_twins_endpoint_eventhubs : k => v.dead_letter_storage_secret }
